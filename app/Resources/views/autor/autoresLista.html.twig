@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Listagem de Autores</h1>
+
+    {% for autor in autores %}
+        <table>
+            <tbody>
+
+                <tr>
+                    <th>Nome:</th>
+                <tr>
+                    <td>{{ autor.nome }}</td>
+                </tr>
+
+
+                <tr><th>Data de Nascimento:</th>
+                <tr>
+                        <td>{{autor.dataNascimento}}</td>
+                </tr>
+
+
+
+                <tr><th>Livro(s):</th>
+                        {% for livros in autor.livros %}
+                    <tr>
+                        <td>{{livros.titulo}}</td>
+                             </tr>
+                    {% endfor %}
+           
+
+
+            </tbody>
+
+        </table> <br><br>
+    {% endfor %}
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

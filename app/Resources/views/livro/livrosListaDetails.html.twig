@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Detalhes de Livro</h1>
+
+        <table>
+            <tbody>
+                <tr>
+                    <th>Titulo:</th>
+                    <td>{{ livro.titulo }}</td>
+                </tr>
+
+
+                <tr><th>Autores:</th>
+                        {% for autor in livro.autores %}
+                        <td>{{autor.nome}}</td>
+                    {% endfor %}
+                </tr>
+
+
+
+                <tr><th>Editora:</th>
+                        {% for editora in livro.editora %}
+                        <td>{{editora.nome}}</td>
+                    {% endfor %}
+                </tr>
+
+
+                <tr><th>Colecções:</th>
+                        {% for coleccao in livro.coleccoes %}
+                        <td>{{coleccao.nome}}</td>
+                    {% endfor %}
+
+
+                </tr>
+
+            </tbody>
+
+        </table> <br><br>
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

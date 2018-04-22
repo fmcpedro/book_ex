@@ -1,0 +1,19 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+livros-lista:
+    path: /livros-lista
+    controller: AppBundle:Livro:livrosLista
+    
+livros-show:
+    path: /livros-show
+    controller: AppBundle:Livro:livrosShow
+        
+livros-show-details:
+    path: /livros-show-details/{isbn}
+    controller: AppBundle:Livro:livrosShowDetails
+    
+autores-lista:
+    path: /autores-lista
+    controller: AppBundle:Autor:autoresLista

@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Listagem de Livros</h1>
+
+    {% for livro in livros %}
+        <table>
+            <tbody>
+
+                <tr>
+                    <th>Titulo:</th>
+                    <td>{{ livro.titulo }}</td>
+                </tr>
+
+
+                <tr><th>Autores:</th>
+                        {% for autor in livro.autores %}
+                        <td>{{autor.nome}}</td>
+                    {% endfor %}
+                </tr>
+
+
+
+                <tr><th>Editora:</th>
+                        {% for editora in livro.editora %}
+                        <td>{{editora.nome}}</td>
+                    {% endfor %}
+                </tr>
+
+
+                <tr><th>Colecções:</th>
+                        {% for coleccao in livro.coleccoes %}
+                        <td>{{coleccao.nome}}</td>
+                    <tr><td><a href="{{path('livros-show-details',{'isbn':livro.isbn})}}"> Detalhes></a></td></tr>
+
+                    {% endfor %}
+
+
+                </tr>
+
+            </tbody>
+
+        </table> <br><br>
+    {% endfor %}
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
